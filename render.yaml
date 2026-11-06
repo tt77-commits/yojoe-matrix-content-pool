@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: yojoe-matrix-content-pool
+    runtime: static
+    buildCommand: mkdir -p public && cp index.html robots.txt public/ && for archive in images-*.zip; do unzip -q -o "$archive" -d public; done
+    staticPublishPath: public
+    autoDeployTrigger: off
